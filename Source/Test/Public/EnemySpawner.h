@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "EnemyCharacter.h"
 #include "EnemySpawner.generated.h"
 
 UCLASS()
@@ -23,18 +24,28 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "maxHealth")
-		float numberOfEnemies = 0;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "currentHealth")
-		float currentHealth = 70;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "damage")
-		float damage = 5;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "currency")
-		int currency = 0;
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "attackSpeed")
-		float attackSpeed = 1;
+	float random(float a, float b);
 
-	UFUNCTION(BlueprintCallable, Category = "HelloWorld")
-		void HelloWorld();
+	float minX;
+	float minY;
 
+	float maxX;
+	float maxY;
+
+	float Z;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "minspawnRadius")
+		float minspawnRadius = 0;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "maxspawnRadius")
+		float maxspawnRadius = 0;
+
+	UPROPERTY(BlueprintReadWrite, Category = "ActorSpawning")
+		float TimeToSpawn = 5.f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "EnemyCharacterBP")
+		TSubclassOf<AEnemyCharacter> EnemyCharacterBP;
+
+	UFUNCTION(BlueprintCallable, Category = "SpawnEnemies")
+		void SpawnEnemies();
 };
