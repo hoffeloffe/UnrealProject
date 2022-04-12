@@ -38,7 +38,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SpawnEnemies")
 		void SpawnEnemies();
 
-
+private:
 	float random(float a, float b);
 
 	float minX;
