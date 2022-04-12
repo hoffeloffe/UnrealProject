@@ -7,7 +7,7 @@
 #include "EnemyCharacter.generated.h"
 
 UCLASS()
-class TEST_API AEnemyCharacter : public ACharacter
+class SHOOTER_API AEnemyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -19,7 +19,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

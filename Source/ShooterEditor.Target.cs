@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class TestTarget : TargetRules
+public class ShooterEditorTarget : TargetRules
 {
-	public TestTarget(TargetInfo Target) : base(Target)
+	public ShooterEditorTarget(TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Game;
+		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 
-		ExtraModuleNames.AddRange( new string[] { "Test" } );
+		ExtraModuleNames.AddRange( new string[] { "Shooter" } );
 	}
 }
