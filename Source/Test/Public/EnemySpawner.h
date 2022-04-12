@@ -23,17 +23,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
-	float random(float a, float b);
-
-	float minX;
-	float minY;
-
-	float maxX;
-	float maxY;
-
-	float Z;
-
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "minspawnRadius")
 		float minspawnRadius = 0;
 
@@ -48,4 +37,19 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "SpawnEnemies")
 		void SpawnEnemies();
+
+
+	float random(float a, float b);
+
+	float minX;
+	float minY;
+
+	float maxX;
+	float maxY;
+
+	float Z;
+
 };
+
+
+

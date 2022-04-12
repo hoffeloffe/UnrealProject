@@ -47,12 +47,11 @@ float AEnemySpawner::random(float a, float b)
 
 void AEnemySpawner::SpawnEnemies()
 {
-	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString(FString::SanitizeFloat(MyCharacterPosition.X)));
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString("Enemy " + FString::FromInt(i)));
+	//Player Position
 	FVector MyCharacterPosition;
-
 	MyCharacterPosition = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
 
+	//Square donut
 	minX = FMath::FRandRange(MyCharacterPosition.X - minspawnRadius, MyCharacterPosition.X - maxspawnRadius);
 	maxX = FMath::FRandRange(MyCharacterPosition.X + minspawnRadius, MyCharacterPosition.X + maxspawnRadius);
 
